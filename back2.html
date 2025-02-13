@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .header {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eff4f7;
+            position: sticky;
+            top: 0px;
+            z-index: 150;
+
+        }
+
+        .header .head1 {
+            font-size: 6px;
+            color: rgba(0, 0, 0, 0.733);
+        }
+
+        .header .head2 {
+            font-size: 6px;
+            text-decoration: underline;
+        }
+
+        .navbar {
+            height: 100px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 40px;
+            z-index: 150;
+            background-color: white;
+        }
+
+        .navbar .logo {
+            height: 85px;
+            width: 160px;
+            /* border: 2px solid black; */
+            padding: 25px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 30px;
+            position: relative;
+        }
+
+        .menu ul li {
+            float: left;
+            list-style: none;
+            padding: 0px 20px;
+            font-size: 19px;
+            color: rgba(0, 0, 0, 0.774);
+        }
+
+
+        .location {
+            height: 40px;
+            width: 300px;
+            /* border: 2px solid black; */
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(211, 211, 211, 0.329);
+            padding-left: 15px;
+
+        }
+
+        .location i {
+            font-size: 20px;
+        }
+
+        .location input {
+            height: 20px;
+            width: 300px;
+            border: none;
+            background-color: rgba(211, 211, 211, 0.068);
+
+        }
+
+        .signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding-right: 30px;
+        }
+
+        .signup img {
+            height: 20px;
+            width: 20px;
+
+        }
+
+        .signup i {
+            font-size: 25px;
+        }
+
+        .all {
+            height: 300px;
+            width: 1120px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            position: absolute;
+            background-color: #fcfcfc;
+            padding: 25px 40px;
+            top: 20px;
+            left: 10px;
+            overflow: scroll;
+            display: none;
+            box-shadow: 4px 4px 15px gray;
+        }
+
+        .all::-webkit-scrollbar {
+            display: none;
+        }
+
+        .boxx {
+            height: 55px;
+            width: 250px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .all1 {
+            height: 50px;
+            width: 70px;
+            /* border: 2px solid black; */
+            padding-right: 10px;
+
+        }
+
+        .all1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .heed h1 {
+            font-size: 14px;
+            padding-right: 30px;
+            color: #575757;
+
+        }
+
+        .menu ul li:hover>.all {
+            display: inline-flex;
+        }
+
+        .airpodslist {
+            height: 30px;
+            width: 100%;
+            /* border: 2px solid black; */
+
+        }
+
+        .airpodslist ul {
+            margin-left: 40px;
+        }
+
+        .airpodslist ul li {
+            float: left;
+            list-style: none;
+            padding: 5px;
+            padding-left: 5px;
+            font-size: 11px;
+            color: rgb(66, 64, 64);
+        }
+
+        .range {
+            height: 100px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .range h1 {
+            font-size: 24px;
+            padding-left: 40px;
+            padding-top: 20px;
+
+        }
+
+        .filter {
+            height: 60px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-between;
+            padding-left: 40px;
+            padding-right: 40px;
+
+        }
+
+        .filter button {
+            height: 50px;
+            width: 150px;
+            /* border: 2px solid black; */
+            font-size: 15px;
+            background-color: #eff4f7;
+            font-weight: 600;
+            border: transparent;
+            border-radius: 10px;
+        }
+
+        .storyby {
+            height: 50px;
+            width: 200px;
+            /* border: 2px solid black; */
+            background-color: #eff4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+
+        }
+
+        .storyby img {
+            height: 20px;
+            width: 20px;
+            /* border: 2px solid black; */
+        }
+
+        .storyby h1 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .allproducts {
+            height:1450px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            /* align-items: center; */
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .pro1 {
+            height: 250px;
+            width: 450px;
+            border: 2px solid #ecf0f4;
+            display: flex;
+            gap: 10px;
+            border-radius: 10px;
+            padding-left: 3px;
+            background-color: #fafafa;
+        }
+
+        .proimg {
+            height: 240px;
+            width: 200px;
+            /* border: 2px solid black; */
+            border-radius: 10px ;
+            margin-top: 6px;
+            position: relative;
+
+
+
+        }
+
+        .proimg img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px ;
+        }
+
+        .proimg button {
+            height: 25px;
+            width: 130px;
+            /* border: 2px solid black; */
+            font-size: 11px;
+            padding-right: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 0px 5px 5px 0px;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+        }
+
+        .prohead {
+            height: 25px;
+            width: 200px;
+            /* border: 2px solid black; */
+            background-color: #fcc50b;
+            border-radius: 0px 0px 10px 10px;
+            position: absolute;
+            bottom: 0px;
+            left: -2px;
+
+        }
+
+        .prohead h1 {
+            font-size: 13px;
+            text-align: center;
+            padding-top: 5px;
+
+        }
+
+        .pro2 {
+            height: 240px;
+            width: 230px;
+            /* border: 2px solid black; */
+            margin-top: 6px;
+        }
+
+        .pro2 h1 {
+            font-size: 12px;
+            font-weight: 200;
+            padding-top: 15px;
+        }
+
+        .pro2 i {
+            color: aqua;
+        }
+
+        .pro2 h2 {
+            font-size: 20px;
+            font-weight: 900;
+            padding-top: 5px;
+
+        }
+
+        .data {
+            height: 50px;
+            width: 228px;
+            /* border: 2px solid black; */
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .borde {
+            height: 30px;
+            width: 50px;
+            /* border: 2px solid black; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            gap: 15px;
+            padding-top: 20px;
+
+        }
+
+        .borde1 {
+            height: 15px;
+            width: 15px;
+            border: 1px solid gray;
+
+            border-radius: 50%;
+
+        }
+
+        .borde2 {
+            height: 15px;
+            width: 15px;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+            position: absolute;
+            background-color: black;
+            right: 50%;
+        }
+
+        .borde p {
+            font-size: 12px;
+        }
+
+        .data h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .data b {
+            font-size: 12px;
+            font-weight: 300;
+            color: gray;
+            text-decoration: line-through;
+
+        }
+
+        .data span {
+            font-size: 13px;
+            color: #12b985;
+        }
+
+        .data {
+            padding-bottom: 15px;
+        }
+        .trough{
+            width: 90%;
+            border: 1px solid #e3e3e3 ;
+            margin-left: 10px;
+        }
+        .twobutton{
+            height: 30px;
+            width: 100%;
+            /* border: 2px solid black; */
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .twobu1{
+            height: 25px;
+            width: 100px;
+            /* border: 2px solid black; */
+            background-color: #eff4f7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 12px;
+        }
+        .twobu1 h1{
+            font-size: 11px;
+            color: #96aeb4;
+        }
+        .mainbutton{
+            height: 50px;
+            width: 90%;
+            /* border: 2px solid black; */
+            margin-left: 10px;
+            margin-top: 15px;
+            text-align: center ;
+            border-radius: 10px;
+        }
+        .mainbutton button{
+            height: 100%;
+            width: 100%;
+            font-size: 20px;
+            color: white;
+            background-color: #1a2024;
+            border-radius: 10px;
+        }
+        .foot {
+            height: 480px;
+            width: 97%;
+            /* border: 2px solid black; */
+            margin: 20px;
+            background-color: #e7f0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boatfoot {
+            height: 400px;
+            width: 380px;
+            /* border: 2px solid black; */
+            margin: 40px;
+        }
+
+        .bf {
+            height: 100px;
+            width: 160px;
+            /* border: 2px solid black; */
+            padding-left: 10px;
+        }
+
+        .bf img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .sub {
+            height: 70px;
+            width: 90%;
+            /* border: 2px solid black; */
+        }
+
+        .sub h1 {
+            font-size: 26px;
+            padding-left: 13px;
+
+        }
+
+        .email {
+            height: 50px;
+            width: 350px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 7px;
+            margin-left: 10px;
+            background-color: white;
+            border: transparent;
+
+        }
+
+        .email input {
+            border: transparent;
+        }
+
+        .iiocn {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 2px solid gray;
+            color: gray;
+            margin-right: 10px;
+        }
+
+        .boatli {
+            height: 400px;
+            width: 820px;
+            /* border: 2px solid black; */
+        }
+        .boatli{
+            display: flex;
+            justify-content:space-around;
+            line-height: 39px;
+        }
+        .boatli h1{
+            font-size: 16px;
+        }
+        .boatli ul li{
+            font-size:14px;
+            list-style: none;
+        }
+        .boatlist1{
+            padding-top: 40px;
+        }
+        .li {
+            height: 300px;
+            width: 97%;
+            /* border: 2px solid black; */
+            background-color: #eff4f7;
+            padding-top: 20px;
+             margin: 20px ;
+        }
+        .listt{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            line-height: 22px;
+            
+        }
+        .listt h1{
+            font-size: 18px;
+            padding-top: 10px;
+
+        }
+        .listt p{
+            font-size: 17px;
+            font-weight: 300;
+            padding-top: 15px;
+        }
+
+        
+        .listt ul li{
+            list-style: none;
+            font-size: 15px;
+            color: #89909e;
+            padding-top: 8px;
+        }
+        .declaration {
+            height: 300px;
+            width: 100%;
+            /* border: 2px solid black; */
+            background-color: #e7f0f5bd;
+
+        }
+
+        .declaration .iconn {
+            height: 70px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+
+        }
+
+        .iconn h1 {
+            font-size: 18px;
+        }
+
+        .iconn i {
+            font-size: 18px;
+        }
+
+        .policy {
+            height: 70px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .policy p {
+            font-size: 14px;
+        }
+
+        .limeted {
+            height: 150px;
+            width: 100%;
+            /* border: 2px solid black; */
+            text-align: center;
+        }
+
+        .limeted p {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.534);
+        }
+        .footericon {
+            /* height: 100vh;
+            width: 100vw; */
+            /* border: 2px solid black; */
+            position: relative;
+
+        }
+
+        .footericon .first1 {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid black; */
+            position: fixed;
+            right: 10px;
+            bottom: 55px;
+            border-radius: 50%;
+            overflow: hidden;
+
+
+
+
+        }
+
+        .first1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .footericon .second2 {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid black; */
+            position: fixed;
+            right: 10px;
+            bottom: 0px;
+            /* margin-right: 10px; */
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+
+
+
+
+        .second2 img{
+            height: 100%;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="head1">
+            <h1>Get 5% off on First Order | Code: WELCOME5 |</h1>
+        </div>
+        <div class="head2">
+            <h1>Shop Now!</h1>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../image/logo.svg" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>Categories<i class="ri-arrow-down-s-line"></i>
+                    <div class="all">
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all1.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all2.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all3.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all4.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all5.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all7.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all8.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all9.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all10.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all11.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all12.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all13.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all14.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all15.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all16.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all17.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all18.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all19.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all20.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </li>
+                <li>boAt Personalisation </li>
+                <li>Corporate Orders</li>
+                <li>More<i class="ri-arrow-down-s-line"></i></li>
+            </ul>
+        </div>
+        <div class="location">
+            <i class="ri-search-line"></i>
+            <input type="text " placeholder="Search EARPHONES ">
+
+        </div>
+        <div class="signup">
+            <img src="../image/signup.png" alt="">
+            <i class="ri-shopping-bag-line"></i>
+
+        </div>
+    </div>
+    <div class="airpodslist">
+        <ul>
+            <li>Home > </li>
+            <li>Special Range -</li>
+            <li>Personalised Products</li>
+        </ul>
+
+    </div>
+    <div class="range">
+        <h1>Special Range — Personalised Products</h1>
+
+    </div>
+    <div class="filter">
+        <button><i class="ri-equalizer-2-line"> Filter By </i><i class="ri-arrow-down-s-line"></i></button>
+        <div class="storyby">
+            <img src="../image/storyby.png" alt="">
+            <h1>Sort By : <span style="font-weight: 200;">Featured </span><i class="ri-arrow-down-s-line"></i></h1>
+
+
+        </div>
+
+    </div>
+    <div class="allproducts">
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg1.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg2.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg3.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg4.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg5.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg6.png" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg7.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg8.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg9.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg10.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg11.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg1.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg1.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg1.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="pro1">
+            <div class="proimg">
+                <img src="../image/proimg1.jpg" alt="">
+                <button>✍️ Engraving Available</button>
+                <div class="prohead">
+                    <h1>Noise Cancellation</h1>
+
+                </div>
+
+            </div>
+            <div class="pro2">
+
+                <h1>⭐4.9 |<span>35 </span><i class="ri-verified-badge-line"></i> </h1>
+                <h2>BoAt Nirvana Ion ANC</h2>
+                <div class="data">
+                    <h1>₹2,499 <b>₹9,990</b><span>75% Off</span></h1>
+                    <div class="borde">
+                        <div class="borde1"></div>
+                        <div class="borde2"></div>
+                        <p>+3</p>
+
+                    </div>
+
+
+                </div>
+                <div class="trough"></div>
+                <div class="twobutton">
+                    <div class="twobu1">
+                        <h1>120 Hours Playback</h1>
+                    </div>
+                    <div class="twobu1">
+                        <h1>BEAST™ Mode</h1>
+                    </div>
+
+                </div>
+                <div class="mainbutton">
+                    <button>Add To Cart</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="foot">
+        <div class="boatfoot">
+            <div class="bf">
+                <img src="../image/boatfoot.svg" alt="">
+
+            </div>
+            <div class="sub">
+                <h1>Subscribe to our email alerts!</h1>
+            </div>
+            <div class="email">
+                <input type="text" placeholder="Enter Your Email Adrees">
+                <div class="iiocn">
+                    <i class="ri-arrow-right-s-line"></i>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="boatli">
+            <div class="boatlist">
+                <h1>Shop </h1>
+                <ul>
+                    <li>True Wireless Earbuds</li>
+                    <li>Wired Headphones </li>
+                    <li>Home Audio</li>
+                    <li>Smart Watches</li>
+                    <li>Misift Trimmers </li>
+                  
+
+                </ul>
+            </div>
+            <div class="boatlist1">
+                <ul>
+                    <li>Wireless Headphones</li>
+                    <li>Wireless Speakers</li>
+                    <li>Mobile Accessories</li>
+                    <li>TRebel</li>
+                    <li>Refer & Earn</li>
+
+                </ul>
+            </div>
+            <div class="boatlist2">
+                <h1>Help</h1>
+                <ul>
+                    <li>Track Your Order</li>
+                    <li>Warranty & Support</li>
+                    <li>Return policy</li>
+                    <li>Service Center </li>
+                    <li> Bulk Orders </li>
+                    <li>Why Buy Direct</li>
+                </ul>
+            </div>
+            <div class="boatlist3">
+                <h1>company</h1>
+                <ul>
+                    <li>About BoAt</li>
+                    <li>News</li>
+                    <li>Read Our Blog</li>
+                    <li>Careers</li>
+                    <li>Security</li>
+                    <li>Investor Relations </li>
+                    <li>Social Responsesibility</li>
+                    <li>Warrnty Policy</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="li">
+        <div class="listt">
+            <div class="li1">
+                <h1>True Wireless Earbuds</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 3000</i>
+                    <li>Earbuds Under 4000</i>
+                    <li>Earbuds Under 5000</i>
+                </ul>
+
+            </div>
+            <div class="li2">
+                <h1>Wireless Speakers</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 3000</i>
+                    <li>Earbuds Under 6000</i>
+                    <li>Earbuds Under 8000</i>
+                </ul>
+
+
+            </div>
+            <div class="li3">
+                <h1>Trimmers</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 800</i>
+                    <li>Earbuds Under 900</i>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 2500</i>
+                </ul>
+
+            </div>
+            <div class="li4">
+                <h1>Chargers</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 3000</i>
+                    <li>Earbuds Under 3500</i>
+                    <li>Earbuds Under 3700</i>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="declaration">
+        <div class="iconn">
+            <h1>Let's get social</h1>
+            <i class="ri-facebook-fill"></i>
+            <i class="ri-twitter-x-fill"></i>
+            <i class="ri-instagram-line"></i>
+            <i class="ri-youtube-fill"></i>
+            <i class="ri-linkedin-fill"></i>
+
+        </div>
+        <div class="policy">
+            <p>Privacy Policy</p>
+            <p>. Terms & Conditions</p>
+        </div>
+        <div class="limeted">
+            <p>© 2024 Imagine Marketing Limited. All Rights Reserved.</p>
+            <p style="padding-top: 25px;">For queries contact us: Manager, Imagine Marketing Limited Unit no. 204 & 205,
+                2nd floor, D-wing &
+                E-wing,</p>
+            <p style="padding-top: 6px;"> Corporate Avenue, Andheri Ghatkopar Link Road, Mumbai, Maharashtra-400093, India</p>
+        </div>
+
+    </div>
+    <div class="footericon">
+        <div class="first1">
+            <img src="../image/first1.png" alt="">
+
+        </div>
+        <div class="second2">
+            <img src="../image/second2.jpg" alt="">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

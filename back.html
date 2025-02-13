@@ -1,0 +1,2079 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eff4f7;
+            position: sticky;
+            top: 0px;
+            z-index: 150;
+
+        }
+
+        .header .head1 {
+            font-size: 6px;
+            color: rgba(0, 0, 0, 0.733);
+        }
+
+        .header .head2 {
+            font-size: 6px;
+            text-decoration: underline;
+        }
+
+        .navbar {
+            height: 100px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 40px;
+            z-index: 150;
+            background-color: white;
+        }
+
+        .navbar .logo {
+            height: 85px;
+            width: 160px;
+            /* border: 2px solid black; */
+            padding: 25px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 30px;
+            position: relative;
+        }
+
+        .menu ul li {
+            float: left;
+            list-style: none;
+            padding: 0px 20px;
+            font-size: 19px;
+            color: rgba(0, 0, 0, 0.774);
+        }
+
+
+        .location {
+            height: 40px;
+            width: 300px;
+            /* border: 2px solid black; */
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(211, 211, 211, 0.329);
+            padding-left: 15px;
+
+        }
+
+        .location i {
+            font-size: 20px;
+        }
+
+        .location input {
+            height: 20px;
+            width: 300px;
+            border: none;
+            background-color: rgba(211, 211, 211, 0.068);
+
+        }
+
+        .signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding-right: 30px;
+        }
+
+        .signup img {
+            height: 20px;
+            width: 20px;
+
+        }
+
+        .signup i {
+            font-size: 25px;
+        }
+
+        .all {
+            height: 300px;
+            width: 1120px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            position: absolute;
+            background-color: #fcfcfc;
+            padding: 25px 40px;
+            top: 20px;
+            left: 10px;
+            overflow: scroll;
+            display: none;
+            box-shadow: 4px 4px 15px gray;
+        }
+
+        .all::-webkit-scrollbar {
+            display: none;
+        }
+
+        .boxx {
+            height: 55px;
+            width: 250px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .all1 {
+            height: 50px;
+            width: 70px;
+            /* border: 2px solid black; */
+            padding-right: 10px;
+
+        }
+
+        .all1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .heed h1 {
+            font-size: 14px;
+            padding-right: 30px;
+            color: #575757;
+
+        }
+
+        .menu ul li:hover>.all {
+            display: inline-flex;
+        }
+
+
+        .airpodslist {
+            height: 30px;
+            width: 100%;
+            /* border: 2px solid black; */
+
+        }
+
+        .airpodslist ul {
+            margin-left: 40px;
+        }
+
+        .airpodslist ul li {
+            float: left;
+            list-style: none;
+            padding: 5px;
+            padding-left: 5px;
+            font-size: 11px;
+        }
+
+        .back {
+            height: 500px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            gap: 15px;
+            /* padding-top: 5px; */
+
+        }
+
+        .corner {
+            height: 330px;
+            width: 130px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            margin-left: 5px;
+            /* background-color: red; */
+            overflow: scroll;
+        }
+
+        .corner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .alll {
+            padding: 14px;
+
+        }
+
+        .corner .alll {
+            height: 100%;
+            width: 100px;
+            /* border: 2px solid black; */
+        }
+
+        .alll1 {
+            height: 60px;
+            width: 70px;
+            /* border: 2px solid black; */
+            margin: 5px;
+        }
+
+        .alll1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .backimage {
+            height: 500px;
+            width: 470px;
+            /* border: 2px solid black; */
+            animation: backimage linear 9s infinite;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        @keyframes backimage {
+            0% {
+                background-image: url(../image/backimg1.png);
+
+
+            }
+
+            20% {
+                background-image: url(../image/backimg2.jpg);
+            }
+
+            40% {
+                background-image: url(../image/backimg3.jpg);
+            }
+
+            60% {
+                background-image: url(../image/backimg4.jpg);
+
+            }
+
+            80% {
+                background-image: url(../image/backimg5.jpg);
+
+            }
+
+            100% {
+                background-image: url(../image/backimg6.png);
+            }
+        }
+
+        .scroll {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .scroll1 {
+            height: 30px;
+            width: 30px;
+            /* border: 2px solid black ; */
+            position: absolute;
+            left: 10px;
+            bottom: 50%;
+            /* background-color: red; */
+
+
+
+
+        }
+
+        .scroll1 i {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            border: transparent;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        .scroll2 {
+            height: 30px;
+            width: 30px;
+            /* border: 2px solid black ; */
+            position: absolute;
+            right: 10px;
+            bottom: 50%;
+
+
+
+        }
+
+        .scroll2 i {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            border: transparent;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+
+
+        .fulldetalis {
+            height: 500px;
+            width: 670px;
+            overflow: scroll;
+            /* border: 2px solid black; */
+            /* background-color: gray; */
+
+        }
+
+        .fulldetalis::-webkit-scrollbar {
+            display: none;
+        }
+
+        .star1 {
+            height: 30px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .star1 h1 {
+            font-size: 13px;
+        }
+
+        .star1 h1 i {
+            height: 5px;
+            width: 5px;
+            border: 2px solid black;
+            border-radius: 50%;
+            /* background-color:#02c78d ; */
+            /* color: white; */
+            border: transparent;
+        }
+
+        .introduse {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .introduse h1 {
+            font-size: 29px;
+
+        }
+
+        .introduse img {
+            height: 30px;
+            width: 30px;
+            /* border: 2px solid black; */
+            margin-right: 20px;
+        }
+
+        .graf {
+            height: 60px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .graf h1 {
+            font-size: 15px;
+            color: #908b7d;
+            padding-top: 5px;
+
+        }
+
+        .pay {
+            height: 60px;
+            width: 100%;
+            /* border: 2px solid black; */
+
+        }
+
+        .pay1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+
+        }
+
+        .pay1 h1 {
+            font-size: 24px;
+            font-weight: 200;
+        }
+
+        .pay1 h2 {
+            font-size: 14px;
+            color: gray;
+            text-decoration: line-through;
+        }
+
+        .pay1 p {
+            font-size: 16px;
+            color: #25ce9d;
+        }
+
+        .pay span {
+            font-size: 12px;
+        }
+
+        .chosses {
+            height: 110px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .chosses h1 {
+            font-size: 17px;
+        }
+
+        .chosses span {
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        .colour {
+            height: 80px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .colour1 {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid black; */
+            border: transparent;
+        }
+
+        .colour1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .delivery {
+            height: 160px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .delivery h1 {
+            font-size: 18px;
+        }
+
+        .place {
+            height: 120px;
+            width: 470px;
+            /* border: 2px solid black; */
+            border: transparent;
+            background-color: #f6f6f8;
+            border-radius: 10px;
+            margin-top: 5px;
+            position: relative;
+        }
+
+        .place1 {
+            height: 60px;
+            width: 370px;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid;
+            margin-left: 10px;
+            padding-top: 20px;
+        }
+
+        .place1 h1 {
+            font-size: 15px;
+        }
+
+        .place1 button {
+            height: 30px;
+            width: 90px;
+            /* border: 2px solid black; */
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+        }
+
+        .placeimg {
+            height: 33px;
+            width: 30px;
+            /* border: 2px solid black; */
+            position: absolute;
+            right: 20px;
+            bottom: 40%;
+        }
+
+        .placeimg img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .date h1 {
+            font-size: 15px;
+            color: #349d6e;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+
+        .date span {
+            font-size: 15px;
+            color: black;
+        }
+
+        .delivery1 {
+            height: 140px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .delivery1 h1 {
+            font-size: 18px;
+        }
+
+        .place2 {
+            height: 90px;
+            width: 470px;
+            /* border: 2px solid black; */
+            background-color: #f6f6f8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: transparent;
+        }
+
+        .place2 img {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid black; */
+            margin-right: 15px;
+        }
+
+        .earn {
+            height: 60px;
+            width: 350px;
+            /* border: 2px solid black; */
+        }
+
+        .earn h1 {
+            font-weight: 300;
+            padding-left: 10px;
+        }
+
+        .active {
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .active h1 {
+            font-size: 18px;
+        }
+
+        .cartt {
+            height: 190px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            gap: 20px;
+        }
+
+        .cartt1 {
+            height: 160px;
+            width: 120px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: #dfefea;
+            border-color: #399a7d;
+        }
+
+        .its {
+            height: 60px;
+            width: 60px;
+            /* border: 2px solid black; */
+            margin-top: 10px;
+            margin-left: 25px;
+        }
+
+        .its h1 {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .dooted {
+            width: 80%;
+            border: 1px dotted black;
+            margin-top: 5px;
+            margin-left: 10px;
+            border-color: #399a7d;
+
+        }
+
+        .its1 {
+            text-align: center;
+        }
+
+        .its1 p {
+            font-size: 13px;
+            margin-top: 10px;
+            color: #5776a2;
+
+        }
+
+        .its1 h1 {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .cartt1 button {
+            height: 25px;
+            width: 110%;
+            /* border: 2px solid black; */
+            font-size: 13px;
+            border-radius: 5px;
+            margin-left: -5px;
+            background-color: #1b2024;
+            color: white;
+        }
+
+        .save {
+            height: 80px;
+            width: 470px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .save1 {
+            height: 45px;
+            width: 220px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            background-color: #1a2024;
+        }
+
+        .save1 h1 {
+            font-size: 20px;
+            padding-top: 10px;
+            color: white;
+        }
+
+        .bighead {
+            height: 150px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            /* justify-content: space-around; */
+            align-items: center;
+            gap: 30px;
+            margin-top: 60px;
+
+        }
+
+        .bigg {
+            height: 160px;
+            width: 200px;
+            /* border: 2px solid black; */
+            margin-left: 90px;
+        }
+
+        .big1 {
+            height: 80px;
+            width: 80px;
+            /* border: 2px solid black; */
+            margin-left: 55px;
+        }
+
+        .big1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .bigg h1 {
+            font-size: 18px;
+            text-align: center;
+
+        }
+
+        .allvideo {
+            height: 380px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            /* align-items: center; */
+            gap: 10px;
+            padding-left: 35px;
+        }
+
+        .mainvideo1 {
+            height: 320px;
+            width: 320px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+        }
+
+        .mainvideo1 video {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+
+        }
+
+        .mainvideo1 h1 {
+            font-size: 18px;
+            font-weight: 300;
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .ads {
+            height: 750px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .ads img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .ads1 {
+            height: 2000px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        .ads1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .qulity {
+            height: 100px;
+            width: 100%;
+            /* border: 2px solid black; */
+            padding-left: 40px;
+            background-color: #f7fafc;
+        }
+
+        .qulity h1 {
+            font-size: 58px;
+            font-weight: 300;
+        }
+
+        .qulity b {
+            font-size: 58px;
+        }
+
+        .qulity1 {
+            height: 850px;
+            width: 100%;
+            /* border: 2px solid black; */
+            background-color: #f7fafc;
+            display: flex;
+            /* gap: 10px; */
+
+        }
+
+        .half1 {
+            height: 100%;
+            width: 50%;
+            /* border: 2px solid black; */
+
+        }
+
+        .half1 ul li {
+            font-size: 21px;
+            list-style: none;
+            padding-left: 40px;
+            color: #64696d;
+        }
+
+        .half1 ul b {
+            font-size: 21px;
+            color: black;
+            line-height: 25px;
+        }
+
+        .inter {
+            height: 200px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inter1 {
+            height: 120px;
+            width: 80%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            border-radius: 10px;
+            background-color: #eff3f5;
+
+        }
+
+        .inter1 img {
+            height: 60px;
+            width: 60px;
+            /* border: 2px solid black; */
+        }
+
+        .inter2 h1 {
+            font-size: 17x;
+        }
+
+        .inter2 p {
+            font-size: 18px;
+        }
+
+        .inter1 button {
+            height: 60px;
+            width: 250px;
+            /* border: 2px solid black; */
+            font-size: 16px;
+            color: white;
+            background-color: #1a2024;
+            border-radius: 10px;
+        }
+
+        .inter1 button i {
+            font-size: 23px;
+        }
+
+        .verify {
+            height: 250px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .verify1 {
+            height: 220px;
+            width: 80%;
+            /* border: 2px solid black; */
+            display: flex;
+            border-width: 2px solid white;
+        }
+
+        .ver1 {
+            height: 100%;
+            width: 50%;
+            /* border: 2px solid black; */
+        }
+
+
+
+        .ver1 p {
+            padding-top: 20px
+        }
+
+
+
+        .ver1 .reviwe button {
+            margin-top: 80px;
+
+        }
+
+        .ver2 {
+            height: 100%;
+            width: 50%;
+            /* border: 2px solid black; */
+        }
+
+        .ver2 img {
+            height: 100%;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+        .staar{
+            height: 420px;
+            width: 80%;
+            /* border: 2px solid black; */
+            margin: 30px;
+            margin-left: 110px;
+            border-top: 2px solid #fafafa ;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 50px;
+        }
+        .staar1{
+            height: 200px;
+            width: 330px;
+            border: 2px solid black;
+            padding-left: 10px;
+            background-color: #fafafa;
+            border-color: #e5e6e9;
+        }
+        .staar1 h1{
+            font-size: 18px;
+        }
+        .staar1 button{
+            background-color: black;
+            color: white;
+            margin-top: 3px;
+        }
+        .staar1 h2{
+            font-size: 13px;
+            padding-top: 3px;
+        }
+        .staar1 b{
+            font-size: 22px;
+            font-weight: 200;
+        }
+        .no{
+            height: 40px;
+            width: 100%;
+            /* border: 2px solid black; */
+            text-align: center;
+           
+        }
+        .no h1{
+            font-size: 24px;
+            font-weight: 900;
+        }
+        .no span{
+            font-size: 16px;
+        }
+        .foot {
+            height: 480px;
+            width: 97%;
+            /* border: 2px solid black; */
+            margin: 20px;
+            background-color: #e7f0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boatfoot {
+            height: 400px;
+            width: 380px;
+            /* border: 2px solid black; */
+            margin: 40px;
+        }
+
+        .bf {
+            height: 100px;
+            width: 160px;
+            /* border: 2px solid black; */
+            padding-left: 10px;
+        }
+
+        .bf img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .sub {
+            height: 70px;
+            width: 90%;
+            /* border: 2px solid black; */
+        }
+
+        .sub h1 {
+            font-size: 26px;
+            padding-left: 13px;
+
+        }
+
+        .email {
+            height: 50px;
+            width: 350px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 7px;
+            margin-left: 10px;
+            background-color: white;
+            border: transparent;
+
+        }
+
+        .email input {
+            border: transparent;
+        }
+
+        .iiocn {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 2px solid gray;
+            color: gray;
+            margin-right: 10px;
+        }
+
+        .boatli {
+            height: 400px;
+            width: 820px;
+            /* border: 2px solid black; */
+        }
+        .boatli{
+            display: flex;
+            justify-content:space-around;
+            line-height: 39px;
+        }
+        .boatli h1{
+            font-size: 16px;
+        }
+        .boatli ul li{
+            font-size:14px;
+            list-style: none;
+        }
+        .boatlist1{
+            padding-top: 40px;
+        }
+        .li {
+            height: 300px;
+            width: 97%;
+            /* border: 2px solid black; */
+            background-color: #eff4f7;
+            padding-top: 20px;
+             margin: 20px ;
+        }
+        .listt{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            line-height: 22px;
+            
+        }
+        .listt h1{
+            font-size: 18px;
+            padding-top: 10px;
+
+        }
+        .listt p{
+            font-size: 17px;
+            font-weight: 300;
+            padding-top: 15px;
+        }
+
+        
+        .listt ul li{
+            list-style: none;
+            font-size: 15px;
+            color: #89909e;
+            padding-top: 8px;
+        }
+        .declaration {
+            height: 300px;
+            width: 100%;
+            /* border: 2px solid black; */
+            background-color: #e7f0f5bd;
+
+        }
+
+        .declaration .iconn {
+            height: 70px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+
+        }
+
+        .iconn h1 {
+            font-size: 18px;
+        }
+
+        .iconn i {
+            font-size: 18px;
+        }
+
+        .policy {
+            height: 70px;
+            width: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .policy p {
+            font-size: 14px;
+        }
+
+        .limeted {
+            height: 150px;
+            width: 100%;
+            /* border: 2px solid black; */
+            text-align: center;
+        }
+
+        .limeted p {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.534);
+        }
+        .footericon {
+            /* height: 100vh;
+            width: 100vw; */
+            /* border: 2px solid black; */
+            position: relative;
+
+        }
+
+        .footericon .first1 {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid black; */
+            position: fixed;
+            right: 10px;
+            bottom: 55px;
+            border-radius: 50%;
+            overflow: hidden;
+
+
+
+
+        }
+
+        .first1 img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .footericon .second2 {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid black; */
+            position: fixed;
+            right: 10px;
+            bottom: 0px;
+            /* margin-right: 10px; */
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+
+
+
+
+        .second2 img{
+            height: 100%;
+            width: 100%;
+
+        }
+       
+    </style>
+
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="head1">
+            <h1>Get 5% off on First Order | Code: WELCOME5 |</h1>
+        </div>
+        <div class="head2">
+            <h1>Shop Now!</h1>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="logo">
+            <img src="../image/logo.svg" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li>Categories<i class="ri-arrow-down-s-line"></i>
+                    <div class="all">
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all1.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all2.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all3.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all4.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all5.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all7.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all8.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all9.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all10.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all11.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all12.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all13.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all14.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all15.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all16.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all17.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all18.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all19.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+                        <div class="boxx">
+                            <div class="all1">
+                                <img src="../image/all20.png" alt="">
+                            </div>
+                            <div class="heed">
+                                <h1>true wireless earbuds</h1>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </li>
+                <li>boAt Personalisation </li>
+                <li>Corporate Orders</li>
+                <li>More<i class="ri-arrow-down-s-line"></i></li>
+            </ul>
+        </div>
+        <div class="location">
+            <i class="ri-search-line"></i>
+            <input type="text " placeholder="Search EARPHONES ">
+
+        </div>
+        <div class="signup">
+            <img src="../image/signup.png" alt="">
+            <i class="ri-shopping-bag-line"></i>
+
+        </div>
+    </div>
+
+    <div class="airpodslist">
+        <ul>
+            <li>Home > </li>
+            <li>Wireless Earbuds ></li>
+            <li>Large Playback Ea... ></li>
+            <li><b>Airdopes 161</b> </li>
+        </ul>
+
+    </div>
+    <div class="back">
+        <div class="corner">
+            <div class="alll">
+                <div class="alll1" style="border-radius: 10px; border: 2px solid;">
+                    <img src="../image/alll1.png" alt="">
+
+                </div>
+                <div class="alll1">
+                    <img src="../image/alll2.jpg" alt="">
+
+                </div>
+
+                <div class="alll1">
+                    <img src="../image/alll3.jpg" alt="">
+
+                </div>
+
+                <div class="alll1">
+                    <img src="../image/alll4.jpg" alt="">
+
+                </div>
+
+                <div class="alll1">
+                    <img src="../image/alll5.jpg" alt="">
+
+                </div>
+
+                <div class="alll1">
+                    <img src="../image/alll6.png" alt="">
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="backimage">
+            <div class="scroll">
+                <div class="scroll1">
+                    <i class="ri-arrow-left-s-line"></i>
+
+                </div>
+                <div class="scroll2">
+                    <i class="ri-arrow-right-s-line"></i>
+
+                </div>
+            </div>
+        </div>
+        <div class="fulldetalis">
+            <div class="star1">
+                <h1>⭐ 4.9 (172 <i class="ri-verified-badge-fill"></i>)</h1>
+            </div>
+            <div class="introduse">
+                <h1>boAt Airdopes 161</h1>
+                <img src="../image/introimg.png" alt="">
+
+            </div>
+            <div class="graf">
+                <h1>Wireless Earbuds with Massive Playback of upto 40 Hours, IPX5 Water & Sweat Resistance, IWP
+                    Technology, Type C Interface</h1>
+            </div>
+            <div class="pay">
+                <div class="pay1">
+                    <h1>₹899</h1>
+                    <h2>₹2490.00</h2>
+                    <p>64% off</p>
+                </div>
+                <span>MRP(Inclusive of all taxes)</span>
+            </div>
+            <div class="chosses">
+                <h1>Choose Your Colour : <span>Pebble Black</span></h1>
+                <div class="colour">
+                    <div class="colour1" style="border: 2px solid; border-radius: 10px; ">
+                        <img src="../image/colour1.png" alt="">
+
+                    </div>
+                    <div class="colour1">
+                        <img src="../image/colour2.png" alt="">
+
+                    </div>
+                    <div class="colour1">
+                        <img src="../image/colour3.png" alt="">
+
+                    </div>
+                    <div class="colour1">
+                        <img src="../image/colour4.png" alt="">
+
+                    </div>
+                    <div class="colour1">
+                        <img src="../image/colour5.png" alt="">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="delivery">
+                <h1>Check Delivery </h1>
+                <div class="place">
+                    <div class="place1">
+                        <h1>122008</h1>
+                        <button>Change</button>
+                    </div>
+
+
+
+                    <div class="placeimg">
+                        <img src="../image/placeimg.png" alt="">
+
+                    </div>
+                    <div class="date">
+                        <h1>Free Delivery <span>| By tuesday , 7 Jan.</span></h1>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="delivery">
+                <h1>User's Love </h1>
+                <div class="place" style=" border: 2px solid #f7e631;">
+                    <div class="place1" style="border-color:#ffd608 ;">
+                        <h1>25 Lacs+ units sold on Flipkart</h1>
+                    </div>
+
+
+
+                    <div class="placeimg">
+                        <img src="../image/placeimg1.png" alt="">
+
+                    </div>
+                    <div class="date">
+                        <h1>3 Lacs+ 5 ⭐ reviews</h1>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="delivery1">
+                <h1>Reward And Payment Offers </h1>
+
+                <div class="place2">
+                    <div class="earn">
+
+                        <h1>Earn upto 44 boAt reward points on this product</h1>
+                    </div>
+                    <img src="../image/placeimg2.png" alt="">
+                </div>
+            </div>
+            <div class="active">
+                <h1>Active Offers</h1>
+
+            </div>
+            <div class="cartt">
+                <div class="cartt1">
+                    <div class="its">
+                        <h1>More Than 2 Items</h1>
+                    </div>
+                    <div class="dooted"></div>
+                    <div class="its1">
+                        <p>Get 5% Off</p>
+                        <h1>₹854 <span style="color: gray;">/Item</span></h1>
+
+                    </div>
+                    <button style="background-color: #2f9567;">MOST POPULAR</button>
+
+
+                </div>
+                <div class="cartt1">
+                    <div class="its">
+                        <h1>More Than 5 Items</h1>
+                    </div>
+                    <div class="dooted"></div>
+                    <div class="its1">
+                        <p>Get 7% Off</p>
+                        <h1>₹836 <span style="color: gray;">/Item</span></h1>
+
+                    </div>
+                    <button>BEST VALUE</button>
+
+
+                </div>
+
+                <div class="cartt1">
+                    <div class="its">
+                        <h1>More Than 10 Items</h1>
+                    </div>
+                    <div class="dooted"></div>
+                    <div class="its1">
+                        <p>Get 10% Off</p>
+                        <h1>₹809 <span style="color: gray;">/Item</span></h1>
+
+                    </div>
+                    <button>MOST SAVINGS</button>
+                </div>
+
+            </div>
+            <div class="save">
+                <div class="save1">
+                    <h1>Add To Cart</h1>
+                </div>
+                <div class="save1" style="background-color:#12b985 ; color:black;">
+                    <h1>Buy Now</h1>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="bighead">
+        <div class="bigg">
+            <div class="big1">
+                <img src="../image/big1.svg" alt="">
+
+            </div>
+            <h1>1 Year <span style="color:#3f4246 ;">Warranty</span></h1>
+
+        </div>
+        <div class="bigg">
+            <div class="big1">
+                <img src="../image/big2.svg" alt="">
+
+            </div>
+            <h1>7 Day <span style="color:#3f4246 ;">Replacement</span></h1>
+
+        </div>
+        <div class="bigg">
+            <div class="big1">
+                <img src="../image/big3.svg" alt="">
+
+            </div>
+            <h1>Free Express <span style="color:#3f4246 ;">Delivery*</span></h1>
+
+        </div>
+        <div class="bigg">
+            <div class="big1">
+                <img src="../image/big4.svg" alt="">
+
+            </div>
+            <h1>GST <span style="color:#3f4246 ;">Billing</span></h1>
+
+        </div>
+
+    </div>
+    <div class="allvideo">
+        <div class="mainvideo1">
+            <video source src="../image/mainvideo1.mp4" autoplay loop></video>
+            <h1>Playback Up To 40 Hours</h1>
+
+        </div>
+        <div class="mainvideo1">
+            <video source src="../image/mainvideo2.mp4" autoplay loop></video>
+            <h1>IWP™ Technology</h1>
+
+        </div>
+        <div class="mainvideo1">
+            <video source src="../image/mainvideo3.mp4" autoplay loop></video>
+            <h1>IPX5 Water Resistance</h1>
+
+        </div>
+        <div class="mainvideo1">
+            <video source src="../image/mainvideo4.mp4" autoplay loop></video>
+            <h1>ASAP™ Charge</h1>
+
+        </div>
+
+    </div>
+    <div class="ads">
+        <img src="../image/ads.jpg" alt="">
+
+    </div>
+    <div class="ads1">
+        <img src="../image/ads1.jpg" alt="">
+
+    </div>
+    <div class="qulity">
+        <h1>Product <b>Specifications</b></h1>
+
+    </div>
+    <div class="qulity1">
+        <div class="half1">
+            <ul>
+                <li>Brand</li>
+                <li> <b>BoAt</b></li>
+
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Product Description/ Name</li>
+                <li> <b>Airdopes 161</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Maximum Retail Price</li>
+                <li> <b>₹2,490</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Net Content</li>
+                <li> <b>Airdopes 161</b></li>
+                <li> <b>1 Unit Type-C </b></li>
+                <li> <b>1 Unit User Manual</b></li>
+                <li> <b>1 Unit Warranty Card</b></li>
+            </ul>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li>Bluetooth Version</li>
+                <li> <b>5.3</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Country Of Origin</li>
+                <li> <b>India</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Address</li>
+                <li> <b>Unit No. 204&205, D-wing & E-wing, Corporate Avenue, Andheri Ghatkopar Link Road, Andheri East,
+                        Mumbai-400093</b></li>
+            </ul>
+
+
+        </div>
+        <div class="half1">
+            <ul>
+                <li>Category/ Generic name of commodity</li>
+                <li> <b>Wireless Bluetooth Earbuds</b></li>
+
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>IPX Rating</li>
+                <li> <b>IPX5</b></li>
+            </ul>
+            <br>
+            <ul>
+                <li>Warranty</li>
+                <li> <b>1 Year from the date of Purchase</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Working Time</li>
+                <li> <b>5.5 Hours Per Charge, Up to 11 HRS additional with case.</b></li>
+
+            </ul>
+            <br>
+            <br>
+
+            <ul>
+                <li>Driver Size</li>
+                <li> <b>13mm</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Beast Moad</li>
+                <li> <b>Yes</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Net Quantity</li>
+                <li> <b>1 Unit</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>Marketed By</li>
+                <li> <b>Imagine Marketing Limited</b></li>
+            </ul>
+            <br>
+            <br>
+            <ul>
+                <li>For Consumer Complaints</li>
+                <li> <b>022-6918-1920 info@imaginemarketingindia.com Imagine Marketing Limited Address: Unit No.
+                        204&205, D-wing & E-wing, Corporate Avenue, Andheri Ghatkopar Link Road, Andheri East,
+                        Mumbai-400093</b></li>
+            </ul>
+
+
+        </div>
+
+    </div>
+    <div class="inter">
+        <div class="inter1">
+            <img src="../image/inter1.png" alt="">
+            <div class="inter2">
+                <h1>Download user manual</h1>
+                <p>For easy access to product information and get the most out of your product.</p>
+            </div>
+            <button><i class="ri-download-line"></i>Download</button>
+
+        </div>
+    </div>
+    <div class="verify">
+        <div class="verify1">
+            <div class="ver1">
+                <h1>Verified Reviews:</h1>
+                <p>⭐⭐⭐⭐⭐</p>
+                <b>Based On 172 Reviwes </b>
+                <div class="reviwe">
+                    <button>Most Resent ▼</button>
+                </div>
+
+
+            </div>
+            <div class="ver2">
+                <img src="../image/Screenshot (3).png" alt="">
+            </div>
+
+        </div>
+    </div>
+    <div class="staar">
+        <div class="staar1">
+            <h1>Smith.</h1>
+            <button>verified</button>
+            <h2>15/04/2024</h2>
+            <p>⭐⭐⭐⭐⭐</p>
+            <br><br><br>
+            <b>Very good base n good battery backup</b>
+        </div>
+        <div class="staar1">
+            <h1>Smith.</h1>
+            <button>verified</button>
+            <h2>15/04/2024</h2>
+            <p>⭐⭐⭐⭐⭐</p>
+            <br><br><br>
+            <b>Very good base n good battery backup</b>
+        </div>
+        <div class="staar1">
+            <h1>Smith.</h1>
+            <button>verified</button>
+            <h2>15/04/2024</h2>
+            <p>⭐⭐⭐⭐⭐</p>
+            <br><br><br>
+            <b>Very good base n good battery backup</b>
+        </div>
+        <div class="staar1">
+            <h1>Smith.</h1>
+            <button>verified</button>
+            <h2>15/04/2024</h2>
+            <p>⭐⭐⭐⭐⭐</p>
+            <br><br><br>
+            <b>Very good base n good battery backup</b>
+        </div>
+        <div class="staar1">
+            <h1>Smith.</h1>
+            <button>verified</button>
+            <h2>15/04/2024</h2>
+            <p>⭐⭐⭐⭐⭐</p>
+            <br><br><br>
+            <b>Very good base n good battery backup</b>
+        </div>
+        <div class="staar1">
+            <h1>Smith.</h1>
+            <button>verified</button>
+            <h2>15/04/2024</h2>
+            <p>⭐⭐⭐⭐⭐</p>
+            <br><br><br>
+            <b>Very good base n good battery backup</b>
+        </div>
+
+    </div>
+    <div class="no">
+        <h1>1 <span>2  3  > >| </span></h1>
+
+    </div>
+    <div class="foot">
+        <div class="boatfoot">
+            <div class="bf">
+                <img src="../image/boatfoot.svg" alt="">
+
+            </div>
+            <div class="sub">
+                <h1>Subscribe to our email alerts!</h1>
+            </div>
+            <div class="email">
+                <input type="text" placeholder="Enter Your Email Adrees">
+                <div class="iiocn">
+                    <i class="ri-arrow-right-s-line"></i>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="boatli">
+            <div class="boatlist">
+                <h1>Shop </h1>
+                <ul>
+                    <li>True Wireless Earbuds</li>
+                    <li>Wired Headphones </li>
+                    <li>Home Audio</li>
+                    <li>Smart Watches</li>
+                    <li>Misift Trimmers </li>
+                  
+
+                </ul>
+            </div>
+            <div class="boatlist1">
+                <ul>
+                    <li>Wireless Headphones</li>
+                    <li>Wireless Speakers</li>
+                    <li>Mobile Accessories</li>
+                    <li>TRebel</li>
+                    <li>Refer & Earn</li>
+
+                </ul>
+            </div>
+            <div class="boatlist2">
+                <h1>Help</h1>
+                <ul>
+                    <li>Track Your Order</li>
+                    <li>Warranty & Support</li>
+                    <li>Return policy</li>
+                    <li>Service Center </li>
+                    <li> Bulk Orders </li>
+                    <li>Why Buy Direct</li>
+                </ul>
+            </div>
+            <div class="boatlist3">
+                <h1>company</h1>
+                <ul>
+                    <li>About BoAt</li>
+                    <li>News</li>
+                    <li>Read Our Blog</li>
+                    <li>Careers</li>
+                    <li>Security</li>
+                    <li>Investor Relations </li>
+                    <li>Social Responsesibility</li>
+                    <li>Warrnty Policy</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="li">
+        <div class="listt">
+            <div class="li1">
+                <h1>True Wireless Earbuds</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 3000</i>
+                    <li>Earbuds Under 4000</i>
+                    <li>Earbuds Under 5000</i>
+                </ul>
+
+            </div>
+            <div class="li2">
+                <h1>Wireless Speakers</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 3000</i>
+                    <li>Earbuds Under 6000</i>
+                    <li>Earbuds Under 8000</i>
+                </ul>
+
+
+            </div>
+            <div class="li3">
+                <h1>Trimmers</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 800</i>
+                    <li>Earbuds Under 900</i>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 2500</i>
+                </ul>
+
+            </div>
+            <div class="li4">
+                <h1>Chargers</h1>
+                <p>Shop By Price</p>
+                <ul>
+                    <li>Earbuds Under 1000</i>
+                    <li>Earbuds Under 2000</i>
+                    <li>Earbuds Under 3000</i>
+                    <li>Earbuds Under 3500</i>
+                    <li>Earbuds Under 3700</i>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="declaration">
+        <div class="iconn">
+            <h1>Let's get social</h1>
+            <i class="ri-facebook-fill"></i>
+            <i class="ri-twitter-x-fill"></i>
+            <i class="ri-instagram-line"></i>
+            <i class="ri-youtube-fill"></i>
+            <i class="ri-linkedin-fill"></i>
+
+        </div>
+        <div class="policy">
+            <p>Privacy Policy</p>
+            <p>. Terms & Conditions</p>
+        </div>
+        <div class="limeted">
+            <p>© 2024 Imagine Marketing Limited. All Rights Reserved.</p>
+            <p style="padding-top: 25px;">For queries contact us: Manager, Imagine Marketing Limited Unit no. 204 & 205,
+                2nd floor, D-wing &
+                E-wing,</p>
+            <p style="padding-top: 6px;"> Corporate Avenue, Andheri Ghatkopar Link Road, Mumbai, Maharashtra-400093, India</p>
+        </div>
+
+    </div>
+    <div class="footericon">
+        <div class="first1">
+            <img src="../image/first1.png" alt="">
+
+        </div>
+        <div class="second2">
+            <img src="../image/second2.jpg" alt="">
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

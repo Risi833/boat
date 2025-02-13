@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0313)https://fledge.as.criteo.com/interest-group?data=LgXZHnwzWFlyS28yZU9CZXFKcFRjMG5JSXNUY0t5Sk1GNkpkTWE5ZWFKVERIQ1pEN1NYMUVXRURuUFI1Q2JXU1dpdnpmNWRnRnZNTEt1MHg2clcrbnpQNFNZbzZkbnFpVHV2eGxSVzlMdnd2UndiS3YrblJnTXpJM0Q0N3dvL1RvNzFmMFFtbS9vYm1hQ3hwTG1lc2s5OHE3SExLQnVXeXhrMHdmVnhIRHdyZXBjN2k3d0E5L3ZZZmt3MXBmT29OUHEzdld8 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Fledge IFrame</title>
+</head>
+<body>
+
+<script>
+    function getBswIg(src) {
+        const elt = document.createElement("iframe");
+        elt.allow = "join-ad-interest-group";
+        elt.width = "0";
+        elt.height = "0";
+        elt.style.display = "none";
+        elt.title = "BSW IG";
+        elt.src = src;
+
+        document.body.appendChild(elt);
+    }
+
+    if (!navigator.joinAdInterestGroup) {
+        console.log("No fledge for you!");
+    } else {
+        var igs =[];
+        var expiration =2592000;
+        var errorEndpoint = "https://fledge.as.criteo.com/interest-group/error?pid=85256";
+        if (navigator.joinAdInterestGroup.length == 1) {
+            for (const ig of igs) {
+                navigator.joinAdInterestGroup(ig).catch((e) => fetch(`${errorEndpoint}&message=${encodeError(e)}`));
+            }
+        } else {
+            // This is for backwards-compatibility
+            // The 1 - arg implementation is future - proof
+            for (const ig of igs) {
+                navigator.joinAdInterestGroup(ig, expiration).catch((e) => fetch(`${errorEndpoint}&message=${encodeError(e)}`));
+            }
+        }
+        if (false) {
+            getBswIg("https://dsp-paapi-sandbox.bsw-ig.criteo.com/paapi/trade/dsp/api/interest_group_join/bsw-sb-ig-test-1");
+            getBswIg("https://paa-proxy-dsp.bsw-sb.criteo.com/paapi/paa-proxy/dsp/api/interest_group_join/bsw-sb-ig-paa-proxy");
+        }
+
+        const toLeave =[{"owner":"https://fledge.as.criteo.com","name":"_yPb93xZRk9EZDgzV1pUREZYSVEraUUwTjlRPT18"},{"owner":"https://fledge.as.criteo.com","name":"nIm7GYMhIrM6HVcFezZ3Sw"},{"owner":"https://fledge.as.criteo.com","name":"vu3yFnxYWWZnYWppUHZkZWtuTDdjaytiYzZRPT18"},{"owner":"https://fledge.as.criteo.com","name":"FQy2oDJM_m0DAwZcKjQdTw"},{"owner":"https://fledge.as.criteo.com","name":"3yEMpHwwR0pVSmNzc2xVd2VOaW5Ibnh2MlF3PT18"},{"owner":"https://fledge.as.criteo.com","name":"x7y1tkDUczoCj1Ej_4pnkw"},{"owner":"https://fledge.as.criteo.com","name":"e-Dnt3xsM0xyajg0SzZCVWtQVHdPNmZhSXRBPT18"},{"owner":"https://fledge.as.criteo.com","name":"F9hVj2A7GrnJtBsfhqVmBg"},{"owner":"https://fledge.as.criteo.com","name":"rUUXJHxDMVc2dkhMZUtyVlIzeExpRzZ2VGpnPT18"},{"owner":"https://fledge.as.criteo.com","name":"efXAPVsiJ-TUtjRfWPlTZA"},{"owner":"https://fledge.as.criteo.com","name":"AzAsjXxiWlIzRUhWcFpoMi80amZwNWs1WnJRPT18"},{"owner":"https://fledge.as.criteo.com","name":"Mw8tBzoRQW6lWirErAe2LQ"},{"owner":"https://fledge.as.criteo.com","name":"5Ivz3HxUdEtuN000U3UwakNqd0hBb2p3OEdnPT18"},{"owner":"https://fledge.as.criteo.com","name":"NMfC9bT5eC7WqmhgojQG0Q"},{"owner":"https://fledge.as.criteo.com","name":"K-Ikj3xtdFF2OGxsNGhsN3VjcVIvM1VBKzVRPT18"},{"owner":"https://fledge.as.criteo.com","name":"wz7c-QUhdGi436nbAON9SQ"},{"owner":"https://fledge.as.criteo.com","name":"dNHf5XxuM2g4YkZUWUV2ZFV3bzlyMlltVU9RPT18"},{"owner":"https://fledge.as.criteo.com","name":"_49c7WZkjRKvZQkjYxIr9g"},{"owner":"https://fledge.as.criteo.com","name":"De7JlHxnTENhN3RoU1RnYmFVZjZDdWFFdEZ3PT18"},{"owner":"https://fledge.as.criteo.com","name":"ZRTPYV5kEyrsFxQDA4kUbw"},{"owner":"https://fledge.as.criteo.com","name":"BBSXWHx3THlJNXovdU1OSG44dTNZMitYb3NRPT18"},{"owner":"https://fledge.as.criteo.com","name":"t0iR0HJhzRzUqPI0kzO7ag"},{"owner":"https://fledge.as.criteo.com","name":"qunA13xnSmFLYnp5L0V1VzRYR2d2KzltZzdRPT18"},{"owner":"https://fledge.as.criteo.com","name":"awvvaBTyYAVmvyXDCnRqDQ"},{"owner":"https://fledge.as.criteo.com","name":"vn3q43xVTkVTUjBEMUtRWEFSRWhVa1dqbHhBPT18"},{"owner":"https://fledge.as.criteo.com","name":"_H0xP6wlctz0Jj6UmDiUtQ"},{"owner":"https://fledge.as.criteo.com","name":"a-iziHxpZHBzSDllZ3BReXNseG9yZUtGZW5nPT18"},{"owner":"https://fledge.as.criteo.com","name":"Lpg9hUtQ8q9isWzAm3toiQ"},{"owner":"https://fledge.as.criteo.com","name":"0Hob-3wrWC9pdHRaNldUQWpOUjJwRGtCZ3R3PT18"},{"owner":"https://fledge.as.criteo.com","name":"jqstY1OepZNr7Ep7i3Q3Bg"},{"owner":"https://fledge.as.criteo.com","name":"Kh9y1Xx0UGJoLzFWNUE5UnBmellvZ0s5WHdBPT18"},{"owner":"https://fledge.as.criteo.com","name":"W4wWgvUaALUSrHGvvytBuQ"},{"owner":"https://fledge.as.criteo.com","name":"x2zPSHwvQjYzSHBSdE53bGZCa04xV3czYUd3PT18"},{"owner":"https://fledge.as.criteo.com","name":"Vm-EnnxYaWF1bVRDK0EvS01VcVBxTVdVMEdnPT18"}];
+        for (const ig of toLeave) {
+            navigator.leaveAdInterestGroup(ig).catch((_) => {});
+        }
+    }
+
+    function encodeError(error) {
+        return encodeURIComponent(error.name + ':' + error.message);
+    }
+
+    async function measureAudienceSize() {
+        // Measuring audience size
+        // Register worklet
+        if((!window?.sharedStorage?.worklet?.addModule) || (!window?.sharedStorage?.run)){
+            return;
+        }
+        await window.sharedStorage.worklet.addModule('');
+
+        // Run audience size measurement operation
+        await window.sharedStorage.run('audience-size-measurement', {
+            data: { bucketKey: BigInt('2728196'), contributionValue:8192}
+        });
+    }
+
+    //TODO reactivate audience-size-measurement
+    //measureAudienceSize();
+
+</script>
+
+</body></html>
